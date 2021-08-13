@@ -58,7 +58,15 @@ class _FormValidationState extends State<FormValidation> {
   }
 
   bool emailValidation() {
-    if (RegExp(".*@.*\.[com|lk]+").hasMatch(_email.text)) {
+    // if (RegExp(".*@.*\.[com|lk]+").hasMatch(_email.text)) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    if (RegExp(
+            //Main Email validation code
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_'{|}~]+@[a-zA-Z0-9]+\.[a-zA-z]+")
+        .hasMatch(_email.text)) {
       return true;
     } else {
       return false;
