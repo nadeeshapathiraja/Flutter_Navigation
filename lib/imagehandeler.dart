@@ -7,6 +7,9 @@ class ImageHandel extends StatelessWidget {
   Widget build(BuildContext context) {
     final displaySize = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Appbar"),
+      ),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
