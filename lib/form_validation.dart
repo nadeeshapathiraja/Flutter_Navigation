@@ -10,6 +10,7 @@ class FormValidation extends StatefulWidget {
 
 class _FormValidationState extends State<FormValidation> {
   var _email = TextEditingController();
+  var _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,16 @@ class _FormValidationState extends State<FormValidation> {
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Enter Your Email",
+              ),
+            ),
+            SizedBox(height: 20),
+            Text("Password"),
+            SizedBox(height: 10),
+            TextField(
+              controller: _password,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Enter Your Password",
               ),
             ),
             SizedBox(height: 20),
@@ -50,13 +61,15 @@ class _FormValidationState extends State<FormValidation> {
   }
 
   bool isNull() {
-    if (_email.text.isEmpty) {
+    if (_email.text.isEmpty || _password.text.isEmpty) {
       return false;
     } else {
       return true;
     }
   }
 
+//Email Validation
+//Test Email: test@gmail.com
   bool emailValidation() {
     // if (RegExp(".*@.*\.[com|lk]+").hasMatch(_email.text)) {
     //   return true;
@@ -67,6 +80,15 @@ class _FormValidationState extends State<FormValidation> {
             //Main Email validation code
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_'{|}~]+@[a-zA-Z0-9]+\.[a-zA-z]+")
         .hasMatch(_email.text)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+//Password validation
+  bool passwordValidate() {
+    if (RegExp("[a-z|A-Z|0-9]+").hasMatch(_password.text)) {
       return true;
     } else {
       return false;
