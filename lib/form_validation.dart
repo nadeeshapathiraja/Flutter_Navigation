@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_test/imagehandeler.dart';
+import 'package:email_validator/email_validator.dart';
 
 class FormValidation extends StatefulWidget {
   const FormValidation({Key? key}) : super(key: key);
@@ -34,6 +35,7 @@ class _FormValidationState extends State<FormValidation> {
             SizedBox(height: 10),
             TextField(
               controller: _password,
+              obscureText: true,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Enter Your Password",
@@ -42,7 +44,7 @@ class _FormValidationState extends State<FormValidation> {
             SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: () {
-                if (isNull() && emailValidation()) {
+                if (isNull() && EmailValidator.validate(_email.text)) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
