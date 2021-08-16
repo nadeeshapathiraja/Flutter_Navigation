@@ -32,18 +32,21 @@ class _ExternalPluginState extends State<ExternalPlugin> {
                 SimpleAlertBox(context: context);
               },
             ),
+            SizedBox(height: 20),
             CustemButton(
               size: size,
               ontap: () {
                 SimpleAlertBox(context: context);
               },
             ),
+            SizedBox(height: 20),
             CustemButton(
               size: size,
               ontap: () {
                 SimpleAlertBox(context: context);
               },
             ),
+            SizedBox(height: 20),
             ProgressButton.icon(
               iconedButtons: {
                 ButtonState.idle: IconedButton(
@@ -65,7 +68,7 @@ class _ExternalPluginState extends State<ExternalPlugin> {
                     color: Colors.green.shade400)
               },
               onPressed: () {},
-              state: ButtonState.idle,
+              state: ButtonState.loading,
             )
           ],
         ),
