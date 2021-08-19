@@ -33,6 +33,7 @@ dependencies:
   flutter_awesome_alert_box: ^2.1.0
   progress_state_button: ^1.0.3
   animate_do: ^2.0.0
+  qr_code_scanner: ^0.5.2
 
 dev_dependencies:
   flutter_test:
