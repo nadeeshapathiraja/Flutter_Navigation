@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_test/externalplugin/externalpluin.dart';
+import 'package:image_test/front_screen.dart';
 import 'package:image_test/splash_screen/splash_screen1.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: SplashScreen1(),
+      home: ScreenTwo(),
     );
   }
 }
